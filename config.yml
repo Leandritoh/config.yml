@@ -1,0 +1,182 @@
+# Detailed explanation of all options available at https://github.com/Leandritoh/config.yml
+header-footer:
+  enabled: true
+  header:
+  - ''
+  - '&b&l►    &b&LSURVIVAL OP    &b&l◄'
+  - ''
+  - '&b&lℹ &f &fVersión: &b1.8/1.16.5 &f &b&lℹ'
+  - ''
+  footer:
+  - ''
+  - '&f &f &f &f &7/tienda &7 &b← &b hypingfaction.holy.gg &b → &7 &7/discord &f &f &f &f'
+  - ''
+  disable-in-worlds:
+  - disabledworld
+  per-world:
+    world1:
+      header:
+      - an example of world with custom
+      footer:
+      - header/footer and prefix/suffix
+    world2: {}
+    world3:
+      header:
+      - an example of custom header/footer
+      - in world3, but
+      footer:
+      - prefix and suffix still same
+tablist-name-formatting:
+  enabled: true
+  anti-override: true
+  disable-in-worlds:
+  - disabledworld
+  align-tabsuffix-on-the-right: false
+  character-width-overrides: {}
+scoreboard-teams:
+  enabled: true
+  invisible-nametags: false
+  anti-override: true
+  enable-collision: true
+  disable-in-worlds:
+  - disabledworld
+  unlimited-nametag-mode:
+    enabled: true
+    use-marker-tag-for-1-8-x-clients: false
+    disable-on-boats: true
+    space-between-lines: false
+    disable-in-worlds:
+    - disabledworld
+    dynamic-lines:
+    - abovename
+    - nametag
+    - belowname
+    - another
+    static-lines:
+      myCustomLine: 0.66
+    disable-in-servers: []
+  case-sensitive-sorting: true
+  sorting-types:
+  - GROUPS:Dev,Owner,Admin,Mod+,Mod,Helper+,Helper,Vyper,Insane,Maestro,Leyenda,Media,Titan,Elite,SrMod,SraMod,Mod+,Supervisor,Supervisora,Builder,Famous,YT,MYT,Ultra,Elite,Vip,MINIYT,MYT,Builder,default
+  - PLACEHOLDER_A_TO_Z:%player%
+yellow-number-in-tablist:
+  enabled: false
+  value: '%health%'
+  disable-in-worlds:
+  - disabledworld
+belowname-objective:
+  number: '%health%'
+  text: '%health%'
+  enabled: false
+  disable-in-worlds:
+  - disabledworld
+bossbar:
+  enabled: false
+  toggle-command: /bossbar
+  remember-toggle-choice: false
+  hidden-by-default: false
+  bars:
+    ServerInfo:
+      refresh: 10000
+      frames:
+        frame1:
+          style: PROGRESS
+          color: BLUE
+          progress: 100
+          text: '&fWebsite: &bwww.domain.com'
+        frame2:
+          style: PROGRESS
+          color: GREEN
+          progress: 100
+          text: '&fDiscord: &adiscord.io/servername'
+        frame3:
+          style: PROGRESS
+          color: YELLOW
+          progress: 100
+          text: '&fTeamSpeak: &ets3.servername.eu'
+      announcement-bar: true
+scoreboard:
+  enabled: false
+  toggle-command: /sb
+  remember-toggle-choice: false
+  hidden-by-default: false
+  use-numbers: false
+  static-number: 0
+  delay-on-join-milliseconds: 0
+  respect-other-plugins: true
+  disable-in-worlds:
+  - disabledworld
+  scoreboards:
+    admin:
+      display-condition: permission:tab.scoreboard.admin
+      title: Admin scoreboard
+      lines:
+      - '%animation:MyAnimation1%'
+      - '&6Online:'
+      - '* &eOnline&7: &f%online%&7/&4%maxplayers%'
+      - '* &eCurrent World&7: &f%worldonline%'
+      - '* &eStaff&7: &f%staffonline%'
+      - ' '
+      - '&6Server Info:'
+      - '* &bTPS&7: %tps%'
+      - '* &bUptime&7: &f%server_uptime%'
+      - '* &bMemory&7: &f%memory-used%&7/&4%memory-max%'
+      - '%animation:MyAnimation1%'
+    scoreboard1:
+      title: Default
+      lines:
+      - '%animation:MyAnimation1%'
+      - '&6My Stats:'
+      - '* &eKills&7: &f%statistic_player_kills%'
+      - '* &eDeaths&7: &f%statistic_deaths%'
+      - '* &eHealth&7: &f%health%'
+      - ' '
+      - '&6Personal Info:'
+      - '* &bRank&7: &f%group%'
+      - '* &bPing&7: &f%ping%&7ms'
+      - '* &bWorld&7: &f%world%'
+      - '%animation:MyAnimation1%'
+ping-spoof:
+  enabled: false
+prevent-spectator-effect:
+  enabled: true
+placeholder-output-replacements:
+  '%essentials_vanished%':
+    'yes': '&7| Vanished'
+    'no': ''
+  '%afk%':
+    'true': ' §4*§4§lAFK§4*§r'
+    'false': ''
+conditions:
+  nick:
+    conditions:
+    - '%player%=%essentials_nickname%'
+    'yes': '%player%'
+    'no': ~%essentials_nickname%
+placeholders:
+  time-format: '[HH:mm:ss / h:mm a]'
+  date-format: dd.MM.yyyy
+  time-offset: 0.0
+  register-tab-expansion: true
+placeholderapi-refresh-intervals:
+  default-refresh-interval: 100
+assign-groups-by-permissions: false
+primary-group-finding-list:
+- Dev
+- Owner
+- Admin
+- Mod
+- Helper
+- default
+debug: false
+mysql:
+  enabled: false
+  host: 127.0.0.1
+  port: 3306
+  database: tab
+  username: user
+  password: password
+per-world-playerlist:
+  enabled: false
+fix-pet-names:
+  enabled: false
